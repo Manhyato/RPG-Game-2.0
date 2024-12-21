@@ -50,14 +50,14 @@ export class Mage extends Player {
     }
     takeDamage(damage) {
         if (this.magic > 50) {
-            this.magic -=12;
-            super.takeDamage(damage/2);
-            console.log(`${this.name} уменьшил урон в 2 раза, маны осталось ${this.magic}`);
+           this.magic -= 12;
+           console.log(`${this.name} уменьшил урон в 2 раза, маны осталось ${this.magic}`);
+           super.takeDamage(damage / 2);
+       }
+       else {
+            super.takeDamage(damage)
         }
-         else {
-             super.takeDamage(damage)
-         }
-    }
+   }
 }
 
 export class Dwarf extends Warrior {
