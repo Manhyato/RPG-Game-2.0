@@ -6,20 +6,20 @@ console.log("RPG started");
 function play(players) {
   let i = 0;
   function turn() {
-    const alivePlayers = players.filter(p => !p.isDead());
+      const alivePlayers = players.filter(p => !p.isDead());
 
-    if (alivePlayers.length <= 1) {
-       if(alivePlayers.length === 1) {
-            console.log(`Победил ${alivePlayers[0].name}!`);
-        } else {
-             console.log('Никто не победил!');
-        }
-      return;
-    }
+      if (alivePlayers.length <= 1) {
+          if (alivePlayers.length === 1) {
+              console.log(`Победил ${alivePlayers[0].name}!`);
+          } else {
+              console.log('Никто не победил!');
+          }
+          return;
+      }
 
-    players[i % players.length].turn(players);
-    i++;
-    setTimeout(turn, 1000);
+      alivePlayers[i % alivePlayers.length].turn(players);
+      i++;
+      setTimeout(turn, 1000);
   }
   turn();
 }
