@@ -61,7 +61,7 @@ export class Player {
 
 
     isDead() {
-        return this.life === 0;
+        return this.life <= 0;
     }
   
     moveLeft(distance) {
